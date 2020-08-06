@@ -48,9 +48,9 @@ async function main() {
     let hint, password;
     if ("h" in params) {
       hint = params["h"];
-      password = prompt(`Please enter the password to unlock the link.\n\nHint: ${hint}`);
+      password = prompt(`Introduce la contraseña para desbloquear el link.\n\nPista: ${hint}`);
     } else {
-      password = prompt("Please enter the password to unlock the link.");
+      password = prompt("Introduce la contraseña para desbloquear el link.");
     }
 
     // Decrypt and redirect if possible
@@ -63,7 +63,7 @@ async function main() {
 
       // Set the "decrypt without redirect" URL appropriately
       document.querySelector("#no-redirect").href =
-        `https://jstrieb.github.io/link-lock/decrypt/#${hash}`;
+        `https://fgiordano.tech/link-lock/decrypt/#${hash}`;
       return;
     }
 
