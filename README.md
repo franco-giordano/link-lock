@@ -4,7 +4,7 @@
 browser.](https://franco.giordano.ar/link-lock)
 
 Link Lock now supports secure, hidden bookmarks via bookmark knocking! Read
-more [here](https://jstrieb.github.io/projects/hidden-bookmarks).
+more [here](https://franco.giordano.ar/projects/hidden-bookmarks).
 
 
 
