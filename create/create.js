@@ -96,22 +96,6 @@ async function generateFragment(url, passwd, hint, useRandomSalt, useRandomIv) {
  * Main UI Functions
  ******************************************************************************/
 
-// Activated when the "Advanced" dropdown is pressed
-function onAdvanced() {
-  let label = document.querySelector("#advanced-label");
-  let advanced = document.querySelector(".advanced");
-  if (advanced.style.display == "none" || advanced.style.display == "") {
-    // Note: innerHTML used instead of innerText so that the entity could be
-    // used rather than having to literally put the unicode in. Same below.
-    label.innerHTML = "&#x25BE; advanced";
-    advanced.style.display = "flex";
-  } else {
-    label.innerHTML = "&#x25B8; advanced";
-    advanced.style.display = "none";
-  }
-}
-
-
 // Activated when the "Encrypt" button is pressed
 async function onEncrypt() {
   if (!validateInputs()) {
@@ -142,11 +126,20 @@ async function onEncrypt() {
   document.querySelector("#output").value = output;
   highlight("output");
 
+  // Adjust "Hidden Bookmark" link
+  document.querySelector("#bookmark").href = `https://jstrieb.github.io/link-lock/hidden/#${encrypted}`;
+
   // Adjust "Open in New Tab" link
   document.querySelector("#open").href = output;
 
   // Adjust "Get TinyURL" button
   document.querySelector("#tinyurl").value = output;
+
+  // Scroll to the bottom so the user sees where the bookmark was created
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth",
+  });
 }
 
 

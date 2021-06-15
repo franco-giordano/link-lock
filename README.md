@@ -3,6 +3,9 @@
 [Password-protect URLs using AES in the
 browser.](https://fgiordano.tech/link-lock)
 
+Link Lock now supports secure, hidden bookmarks via bookmark knocking! Read
+more [here](https://jstrieb.github.io/projects/hidden-bookmarks).
+
 
 
 ## About
@@ -46,6 +49,11 @@ particular) for more information.
 
 Read the Hacker News discussion [here](https://news.ycombinator.com/item?id=23242290).
 
+Also [discussed on
+r/netsec](https://www.reddit.com/r/netsec/comments/i3n4sm/link_lock_password_protect_urls_using_aes_in_the/)
+and [discussed on
+r/programming](https://www.reddit.com/r/programming/comments/i5kpjx/link_lock_is_a_tool_for_encrypting_and_decrypting/).
+
 
 
 ## Examples
@@ -85,7 +93,9 @@ me to build a secure encryption application. In particular:
 
 ## Usage
 
-- Create a locked link here: [https://fgiordano.tech/link-lock](https://fgiordano.tech/link-lock).
+- Create a locked link here: [https://jstrieb.github.io/link-lock](https://jstrieb.github.io/link-lock).
+- Once you have a locked link, create a hidden bookmark here:
+  <https://jstrieb.github.io/link-lock/hidden>.
 - Use the advanced options when creating a link to make the encryption more
   secure (at the cost of a longer link).
     - By default, the initialization vector is randomized for security, but
@@ -100,8 +110,10 @@ me to build a secure encryption application. In particular:
   curse if you are not careful!
 - Currently, the only way to recover a lost password is by trying all possible
   options (very slowly) by brute force. An example application to brute force
-  Link Lock URLs can be found here:
+  Link Lock URLs in the browser can be found here:
   [https://jstrieb.github.com/link-lock/bruteforce](https://jstrieb.github.com/link-lock/bruteforce/).
+- A parallelized, cross-platform, CPU-based brute forcer can be found here:
+  <https://github.com/jstrieb/bruteforce-link-lock>
 - If you receive a Link Lock URL that you do not trust, decrypt it using this
   interface that does not automatically redirect:
   [https://jstrieb.github.com/link-lock/decrypt](https://jstrieb.github.com/link-lock/decrypt/).
@@ -141,9 +153,24 @@ recommended. Entire web pages can be shared safely and secretly this way.
 
 
 
+## Project Status
+
+This project is actively maintained. If there are no recent commits, it means
+that everything has been running smoothly! Even if the link storage protocol
+is updated, Link Lock is designed to be 100% backwards-compatible, so your
+locked links will never break.
+
+Even if something were to happen to me, and I could not continue to work on
+the project, Link Lock will continue to work as long as my GitHub account is
+open and the [jstrieb.github.io](https://jstrieb.github.io) domain is online.
+
+
+
 ## Other Versions & Related Projects
 
 - French translation: [cacheton.site](https://cacheton.site)
+- German translation:
+  [ebildungslabor.github.io/link-lock](https://ebildungslabor.github.io/link-lock/)
 
 
 
@@ -157,4 +184,6 @@ reflected XSS vulnerability resulting from allowing non-hypertext protocols in
 the URL. The vulnerability has since been fixed.
 
 Thank you to Guillaume ([@gverdun](https://twitter.com/gverdun)) for translating
-Link Lock into French, and hosting a translated version.
+Link Lock into French, and hosting a translated version. Likewise, thanks to
+Nele Hirsch ([@eBildungslabor](https://github.com/eBildungslabor/)) for
+translating and hosting a German version!
