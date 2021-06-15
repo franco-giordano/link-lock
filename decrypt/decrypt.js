@@ -116,6 +116,6 @@ function onCopy(id) {
 function main() {
   if (window.location.hash) {
     document.querySelector("#encrypted-url").value =
-      `https://fgiordano.tech/link-lock/${window.location.hash}`;
+      `https://franco.giordano.ar/link-lock/${window.location.hash}`;
   }
 }
